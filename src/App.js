@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+  BrowserRouter as Router
 } from 'react-router-dom';
 import Sidebar from './components/sidebar';
-import Home from './containers/home';
+import Routes from './routes';
 import { Provider } from 'react-redux';
 import store from './store';
 import './App.css';
@@ -17,12 +15,10 @@ class App extends Component {
         <Router>
           <div className="app">
             <Sidebar />
-            <div className="page">
-              <Switch>
-                <Route exact path="/">
-                  <Home/>
-                </Route>
-              </Switch>
+            <div className="page-wrapper">
+              <div className="page">
+                <Routes />
+              </div>
             </div>
           </div>
         </Router>

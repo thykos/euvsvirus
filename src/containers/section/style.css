@@ -1,0 +1,14 @@
+.section-wrapper {
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.section-wrapper .btns-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-wrapper .btns-wrapper a {
+    margin: 0 20px;
+}

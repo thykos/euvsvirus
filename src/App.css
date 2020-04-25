@@ -4,7 +4,36 @@
     min-height: 100vh;
 }
 
-.page {
-    padding-left: 250px;
+.app .page-wrapper {
+    margin-left: 250px;
     flex: 1 100%;
+    flex-direction: column;
+    display: flex;
+}
+
+.app .page-wrapper .page {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    flex: 1 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app .page-wrapper .page > div {
+    flex: 1 100%;
+}
+
+.app .btn {
+    color: #000;
+    background: #efefef;
+    border: none;
+    font-size: 14px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.app .btn.big {
+    padding: 10px 20px;
+    font-size: 24px;
 }
