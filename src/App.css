@@ -1,0 +1,8 @@
+.app {
+ display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 100%;
+}
