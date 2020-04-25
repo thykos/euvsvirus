@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import Header from './components/header';
+import Sidebar from './components/sidebar';
 import Home from './containers/home';
 import { Provider } from 'react-redux';
 import store from './store';
@@ -16,7 +16,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="app">
-            <Header />
+            <Sidebar />
             <div className="page">
               <Switch>
                 <Route exact path="/">

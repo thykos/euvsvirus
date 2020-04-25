@@ -1,8 +1,10 @@
 .app {
- display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
 }
 
 .page {
-  flex: 1 100%;
+    padding-left: 250px;
+    flex: 1 100%;
 }
