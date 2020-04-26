@@ -1,0 +1,15 @@
+.ChatMessage {
+  background-color: rgba(91, 163, 171, 0.1);
+  color: #181818;
+  padding: 11px 15px;
+  display: flex;
+  max-width: 50%;
+  border-radius: 20px;
+  word-break: break-word;
+}
+
+.ChatMessage.isReply {
+  background-color: #FB7C6D;
+  margin-left: auto;
+  color: white;
+}
