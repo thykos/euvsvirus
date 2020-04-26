@@ -117,6 +117,14 @@
     margin: 4px 5px;
     border-radius: 50%;
     background-color: lightgrey;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 0px grey;
+    transition: all .3s ease;
+}
+
+.SidebarCaseInfo .achivments-wrap .achivment:hover {
+    transform: scale(1.2);
+  
 }
 
 .ProgressBar {
