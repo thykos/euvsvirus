@@ -5,13 +5,12 @@ import ChatMessage from './components/ChatMessage';
 import cn from 'classnames';
 // styles
 import './Chat.css';
+import data from './mock';
 
 // message behavior keys
 const NEXT_QUESTION = 'NEXT_QUESTION';
 const NEXT_WITH_SKIP = 'NEXT_WITH_SKIP';
 const ADDITIONAL_QUESTION = 'ADDITIONAL_QUESTION';
-
-import data from './mock';
 
 const {
   name,
@@ -44,12 +43,37 @@ const Chat = ({
     endMessageAnchor.current && endMessageAnchor.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [isTyping, messageQueue, endMessageAnchor]);
 
+  const sendMessage = (message) => {
+    switch (message.action) {
+      case NEXT_WITH_SKIP:
+        typeMessage(message, true);
+        setCurrentMessageIdx(currentMessageIdx + 2);
+        setReplies([])
+        return;
+      case NEXT_QUESTION:
+        typeMessage(message, true);
+        setCurrentMessageIdx(currentMessageIdx + 1);
+        setReplies([])
+        return;
+      case ADDITIONAL_QUESTION:
+        setIsTyping(true)
+        typeMessage(message);
+        setReplies([])
+        return;
+      default:
+        setIsTyping(true)
+        typeMessage(message);
+        setReplies([])
+        return;
+    }
+  };
+
   useEffect(() => {
     if (chatScript && chatScript.length) {
         setIsTyping(true);
         sendMessage(chatScript[currentMessageIdx]);
     }
-  }, [chatScript, sendMessage, currentMessageIdx]);
+  }, [chatScript, currentMessageIdx]);
 
   useEffect(() => {
     return () => {
@@ -75,30 +99,7 @@ const Chat = ({
     }, 1000);
   }
 
-  const sendMessage = (message) => {
-    switch (message.action) {
-      case NEXT_WITH_SKIP:
-        typeMessage(message, true);
-        setCurrentMessageIdx(currentMessageIdx + 2);
-        setReplies([])
-        return;
-      case NEXT_QUESTION:
-        typeMessage(message, true);
-        setCurrentMessageIdx(currentMessageIdx + 1);
-        setReplies([])
-        return;
-      case ADDITIONAL_QUESTION:
-        setIsTyping(true)
-        typeMessage(message);
-        setReplies([])
-        return;
-      default:
-        setIsTyping(true)
-        typeMessage(message);
-        setReplies([])
-        return;
-    }
-  };
+  
 
   return (
     <div className={cn('Chat', className)}>
