@@ -3,20 +3,20 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { findIndex } from 'lodash';
 import { useParams, Link, Redirect } from 'react-router-dom';
-import { setSection, setChecked } from '../../store/case';
+import { setSection, setChecked, setAnswer } from '../../store/case';
 import Part from '../../components/part';
 import './style.css';
 
 const Section = (props) => {
   const { id } = useParams();
-  const { cse, onSet, progress, onNext } = props;
+  const { cse, onSet, progress, onNext, onAnswer } = props;
   useEffect(() => {
     onSet(id);
   }, [id]);
 
-  const section = cse.sections.find(item => item.id === parseInt(id));
+  const section = cse.sections.find(item => item.id === parseInt(id, 10));
   const sectionIds = cse.sections.map(item => item.id);
-  const currentSectionIndex = findIndex(sectionIds, idx => idx === parseInt(id));
+  const currentSectionIndex = findIndex(sectionIds, idx => idx === parseInt(id, 10));
   const nextSectionId = sectionIds[currentSectionIndex + 1];
   const prevSectionId = sectionIds[currentSectionIndex - 1];
   const nextLink = nextSectionId ? `/section/${nextSectionId}` : null;
@@ -32,7 +32,7 @@ const Section = (props) => {
   return id && section ? (
     <div className="section-wrapper">
       <div className="section-caption">{section.caption}</div>
-      {section.parts.map((part, idx) => <Part part={part} key={idx}/>)}
+      {section.parts.map((part, idx) => <Part part={part} key={idx} progress={progress} sectionId={parseInt(id, 10)} onAnswer={onAnswer}/>)}
       <div className="btns-wrapper">
         {link(prevLink, () => {}, 'Previous', 'outline')}
         {link(nextLink, onClickNext, 'Next')}
@@ -50,7 +50,8 @@ Section.propTypes = {
   cse: PropTypes.object.isRequired,
   progress: PropTypes.object.isRequired,
   onSet: PropTypes.func.isRequired,
+  onAnswer: PropTypes.func.isRequired,
   onNext: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, { onSet: setSection, onNext: setChecked })(Section);
+export default connect(mapStateToProps, { onSet: setSection, onNext: setChecked, onAnswer: setAnswer })(Section);

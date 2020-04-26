@@ -204,7 +204,7 @@
     justify-content: center;
 }
 
-.part-wrapper .file-wrapper .file a{
+.part-wrapper .file-wrapper .file a {
     font-size: 18px;
     color: #000;
     display: flex;
@@ -221,4 +221,39 @@
 .part-wrapper .file-wrapper .filename {
     text-decoration: underline;
     color: #000;
+}
+
+.part-wrapper .qwc-wrapper {
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.part-wrapper .qwc-wrapper .title {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.part-wrapper .qwc-wrapper .radios {
+    margin-bottom: 30px;
+}
+
+
+.part-wrapper .qwc-wrapper .comment-title {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.part-wrapper .qwc-wrapper .qwc-textarea {
+    width: 100%;
+}
+
+.part-wrapper .qwc-wrapper .btns-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
 }

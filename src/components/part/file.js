@@ -8,7 +8,7 @@ const types = {
   pdf: faFilePdf
 };
 
-const file = ({ part }) => {
+const File = ({ part }) => {
   return (
     <div className="file-wrapper">
       {part.data.title ? <div className="title">{part.data.title}</div> : null}
@@ -22,8 +22,8 @@ const file = ({ part }) => {
   )
 };
 
-file.propTypes = {
+File.propTypes = {
   part: PropTypes.object.isRequired
 };
 
-export default file;
+export default File;

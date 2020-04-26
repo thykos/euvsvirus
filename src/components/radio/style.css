@@ -1,0 +1,45 @@
+.radio-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.radio-wrapper label {
+    font-weight: normal;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.radio-wrapper label input {
+    display: none;
+}
+
+.radio-wrapper label .dot {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    padding: 2px;
+    border-radius: 50%;
+    border: 2px solid #358088;
+    position: relative;
+    margin-right: 10px;
+}
+
+.radio-wrapper label input:checked + .dot:after {
+    background: #358088;
+    display: inline-block;
+    content: '';
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+}
