@@ -42,11 +42,7 @@ export default {
       {
         id: 'reply-1-0',
         text: 'Yes',
-        action: 'NEXT_WITH_SKIP',
-        additionalMessage: {
-          id: 'additional-1-0',
-          text: 'Good 🙌',
-        }
+        action: 'NEXT_WITH_SKIP'
       },
       {
         id: 'reply-1-1',

@@ -10,6 +10,7 @@ import Image from './image';
 import File from './file';
 import QuestionWithComment from './questionWithComment';
 import Question from './question';
+import Chat from '../Chat';
 import './style.css';
 
 const Part = ({ part, progress, onAnswer, sectionId }) => {
@@ -23,7 +24,8 @@ const Part = ({ part, progress, onAnswer, sectionId }) => {
     image: Image,
     file: File,
     questionWithComment: QuestionWithComment,
-    question: Question
+    question: Question,
+    chat: Chat
   };
 
   return (
