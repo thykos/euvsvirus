@@ -6,7 +6,7 @@ export default {
   },
   title: 'British Petroleum',
   subtitle: 'From Texas City to the Gulf of Mexico and Beyond',
-  img: 'https://source.unsplash.com/random/800x600',
+  img: 'https://www.sharkeyuk.com/wp-content/uploads/2014/10/BP-Aberdeen-3-1.jpg',
   sections: [
     {
       id: 1,
@@ -17,7 +17,7 @@ export default {
           id: 1253,
           type: 'title',
           data: {
-            img: 'https://source.unsplash.com/random/800x600',
+            img: 'http://skyhighpainting.com.au/wp-content/uploads/2015/02/bp5.jpg',
             title: 'British Petroleum:',
             subtitle: 'From Texas City to the Gulf of Mexico and Beyond',
           }
@@ -84,7 +84,7 @@ export default {
           id: 6013,
           type: 'image',
           data: {
-            src: 'https://source.unsplash.com/random/480x360'
+            src: 'https://cdn.dvidshub.net/media/thumbs/photos/1312/1077691/2000x1303_q95.jpg'
           }
         },
         {
@@ -97,7 +97,7 @@ export default {
                 author: {
                   name: 'Bob Dudley',
                   info: 'British Petroleum Group Chief Executive',
-                  avatar: 'https://source.unsplash.com/random/50x50'
+                  avatar: '/images/bd.jpg'
                 }
               }
             ]
@@ -166,7 +166,7 @@ export default {
                 author: {
                   name: 'Gregory Walz',
                   info: 'The Drilling Engineering Team Leader at BP',
-                  avatar: 'https://source.unsplash.com/random/50x50'
+                  avatar: 'https://img2.freepng.ru/20180710/fjk/kisspng-linkedin-professional-network-service-instituto-na-diego-rivera-5b44fd43c87367.8220737715312479398211.jpg'
                 }
               },
               {
@@ -174,7 +174,7 @@ export default {
                 author: {
                   name: 'John Guide',
                   info: 'BP’s Well Team Leader',
-                  avatar: 'https://source.unsplash.com/random/50x50'
+                  avatar: '/images/jg.jpg'
                 }
               }
             ]

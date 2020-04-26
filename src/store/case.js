@@ -58,7 +58,7 @@ const caseData = (state = initialState, action) => {
       const newProgress = {
         ...state.progress,
         answers: {
-          ...state.answers,
+          ...state.progress.answers,
           [action.payload.sectionId]: {
             [action.payload.partId]: action.payload.answer
           }

@@ -8,10 +8,10 @@
     position: absolute;
     background: #FB7C6D;
     padding: 10px 30px;
-    width: 60px;
     color: #fff;
     top: 0;
-    right: -120px;
+    left: 100%;
+    margin-left: 60px;
     text-align: center;
     transform-origin: 0 0;
     transform: rotate(90deg);
