@@ -29,10 +29,10 @@ const Section = (props) => {
   };
 
   const link = (link, handler, text, type) => link ? <Link to={link} onClick={handler}><button className={`btn big ${type}`}>{text}</button></Link> : <button className={`btn big ${type}`} disabled>{text}</button>;
-  return id ? (
+  return id && section ? (
     <div className="section-wrapper">
       <div className="section-caption">{section.caption}</div>
-      {section && section.parts.map((part, idx) => <Part part={part} key={idx}/>)}
+      {section.parts.map((part, idx) => <Part part={part} key={idx}/>)}
       <div className="btns-wrapper">
         {link(prevLink, () => {}, 'Previous', 'outline')}
         {link(nextLink, onClickNext, 'Next')}
