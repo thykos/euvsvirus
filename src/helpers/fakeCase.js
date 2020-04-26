@@ -58,7 +58,7 @@ export default {
           id: 65133,
           type: 'video',
           data: {
-            src: 'https://www.youtube.com/embed/GRJ0Tt7UYiQ'
+            src: 'https://www.youtube.com/embed/eOK9J0wETYo'
           }
         },
         {
@@ -145,7 +145,7 @@ export default {
           id: 6452,
           type: 'video',
           data: {
-            src: 'https://www.youtube.com/embed/GRJ0Tt7UYiQ'
+            src: 'https://www.youtube.com/embed/dGoOTqEMbWk'
           }
         },
         // audio
