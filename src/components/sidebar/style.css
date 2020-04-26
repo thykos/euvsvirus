@@ -1,10 +1,11 @@
 .sidebar-wrapper {
-    width: 250px;
+    width: 300px;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background: #efefef;
+    background: #F7F7F8;
+    font-weight: 300;
 }
 
 .sidebar-wrapper .sidebar {
@@ -30,45 +31,178 @@
 
 
 .sidebar-wrapper .sidebar .menu li a {
+    font-size: 18px;
     width: 100%;
     display: flex;
     box-sizing: border-box;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 30px;
     color: #000;
     text-decoration: none;
+    transition: all .3s ease;
 }
 .sidebar-wrapper .sidebar .menu li .active-menu-link {
-    background: #000;
-    color: #fff;
-}
-.sidebar-wrapper .sidebar .menu-item-icon {
-    margin-right: 10px;
-    width: 46px;
+    background: lightgrey;
 }
 
-.sidebar-wrapper .sidebar .sidebar-footer {
-    flex: 1 100%;
+.sidebar-wrapper .sidebar .menu-item-icon {
+    margin-right: 10px;
+    width: 30px;
+}
+
+.sidebar-wrapper .sidebar .sidebar-timer {
     display: flex;
     align-items: flex-end;
     padding-bottom: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    align-items: center;
+    color: #181818;
+    margin-top: auto;
+    justify-content: center;
+    font-weight: 500;
 }
 
-.sidebar-wrapper .sidebar .sidebar-footer .sidebar-timer {
-    margin: 10px;
-    padding: 10px 20px;
-    background: #000;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    width: 100%;
+.sidebar-wrapper .alarm-icon {
+    margin-right: 30px;
 }
-.sidebar-wrapper .sidebar .sidebar-footer .sidebar-timer .sidebar-timer-time {
+
+.sidebar-wrapper .sidebar .sidebar-timer .sidebar-timer-time {
     display: flex;
-    flex: 1 100%;
-    text-align: center;
-    align-items: center;
     justify-content: center;
-    font-size: 24px;
+    width: 110px;
 }
+
+
+.SidebarCaseInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 18px;
+}
+
+.SidebarCaseInfo .case-name {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.SidebarCaseInfo .user-wrapper {
+    display: flex;
+    align-items: center;
+}
+.SidebarCaseInfo .user-wrapper .name {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.SidebarCaseInfo .user-wrapper .avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: url(https://s3-alpha-sig.figma.com/img/9304/1a6a/8169760737fb902f633ca91a09983876?Expires=1588550400&Signature=StcNg5wwkuPpvqRpMShCtlr96MN-CjbjeB3YHz~kC3Nus0yZupu9IPOym3ci0EEvpHrYr78dgwlsMhi~unxLQ3PLaUhKkJHmt2sNiRQpj4eZpTillK9B6iQ-ER7j58lkZwQRtJ0Jm1ol4U8aAjQHNIgGhkOdYC13sGLCxFkIhyI5k7ZpqwSBXkDm7rSJflopmz~lkNGS79w-S78bS3qcaYlffW3blt~rJnfnlSTLbSqLnM-WzgBnGsR9r~v8HR81zyBoMlyS35VwNIZr7QpHa5jvIi-H6ZCfxBYq57c0UOHNMO8~ZhVKJuAYK7ukTzSiyVZwOGukg-MqFkX5EBS4mw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA) gray;
+    background-position: center;
+    background-size: 180px;
+    background-position: 118px 106px;
+}
+
+.SidebarCaseInfo .achivments-wrap {
+    padding-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.SidebarCaseInfo .achivments-wrap .achivment {
+    height: 40px;
+    width: 40px;
+    margin: 4px 5px;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
+
+.ProgressBar {
+    padding: 30px 0;
+}
+
+.ProgressBar .title {
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #a7a7a7;
+}
+
+.ProgressBar .title span {
+    color: #181818;
+    margin-right: 10px;
+}
+
+.ProgressBar .bar-wrap {
+    position: relative;
+    height: 5px;
+    background-color: #eaeaea;
+}
+
+.ProgressBar .bar-wrap .bar {
+    height: 100%;
+    background-color: #5ba3ab;
+}
+
+
+.SidebarCaseInfo .case-structure {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.SidebarCaseInfo .case-structure .case-section-item .circle {
+    background-color: gray;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.SidebarCaseInfo .case-structure .case-section-item {
+    padding: 15px 10px;
+    opacity: .5;
+    color: gray;
+    font-size: 18px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+    align-items: center;
+    transition: all .3s ease;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+.SidebarCaseInfo .case-structure .case-section-item .section-name {
+    text-decoration: none;
+}
+
+.SidebarCaseInfo .case-structure .case-section-item.isChecked .circle {
+    background-color: #5ba3ab;
+}
+
+.SidebarCaseInfo .case-structure .case-section-item:hover:not(.isActive) {
+    background-color: lightgray;
+}
+
+.SidebarCaseInfo .case-structure .case-section-item.isActive {
+    color: #fff;
+    background-color: #5ba3ab;
+    opacity: 1;
+}
+.SidebarCaseInfo .case-structure .case-section-item.isActive .circle {
+    background-color: #fff;
+}
+
+.SidebarCaseInfo .case-structure .case-section-item.isChecked {
+    opacity: 1;
+}
+
+
+
