@@ -74,6 +74,17 @@ export default {
           }
         },
         {
+          id: 633213,
+          type: 'text',
+          data: {
+            content: 'Oil had not previously been extracted from such extreme depths anywhere in the world where oil formations have pressures above 1,200 bars and temperatures of around 135°C. 21 In many ways the ensuing exploration projects were on virgin ground experimenting under conditions of high uncertainty with many unknown factors. Furthermore, the location in the Mexican Gulf exposed the seaborne oil rigs to tropical hurricanes. For example, BP’s drilling platform on the deepwater Mississippi Canyon Block 778 needed urgent repairs in 2005 when it tilted 30 degrees after Hurricane Dennis swept through Thunder Horse.'
+          }
+        },
+        {
+          id: 1231233,
+          type: 'audio',
+        },
+        {
           id: 6313,
           type: 'text',
           data: {

@@ -12,6 +12,7 @@ import QuestionWithComment from './questionWithComment';
 import Question from './question';
 import Chat from '../Chat';
 import './style.css';
+import AudioPreview from '../AudioPreview/AudioPreview';
 
 const Part = ({ part, progress, onAnswer, sectionId }) => {
   const components = {
@@ -25,7 +26,8 @@ const Part = ({ part, progress, onAnswer, sectionId }) => {
     file: File,
     questionWithComment: QuestionWithComment,
     question: Question,
-    chat: Chat
+    chat: Chat,
+    audio: AudioPreview,
   };
 
   return (

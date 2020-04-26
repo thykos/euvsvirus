@@ -5,6 +5,6 @@ export const toHHMMSS = (secs) => {
 
   const [h,m,s] = [hours,minutes,seconds]
   .map(v => v < 10 ? "0" + v : v)
-  .filter((v,i) => v !== "00" || i > 0);
-  return `${h}h ${m}m ${s}s`;
+  // .filter((v,i) => v !== "00" || i > 0);
+  return `${h || '00'}h ${m}m ${s}s`;
 };

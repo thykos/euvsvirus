@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import './style.css';
 
 const Preview = ({ item }) => {
+  const startTimer = () => {
+    if (!localStorage.getItem('timer'))
+    localStorage.setItem('timer', new Date().getTime())
+  };
+
   return (
     <div className="preview-wrapper">
       <div className="title">{item.title}</div>
@@ -13,7 +18,7 @@ const Preview = ({ item }) => {
       </div>
       <div className="btns-wrapper">
         <Link to={`/section/${item.sections[0].id}`}>
-          <button className="btn big">Start</button>
+          <button className="btn big" onClick={startTimer}>Start</button>
         </Link>
       </div>
     </div>
