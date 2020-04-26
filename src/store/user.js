@@ -1,7 +1,9 @@
 const SET_USER = 'user/set_user';
 
 const initialState = {
-  user: {},
+  user: {
+    full_name: 'Juan Carlos Cuenca',
+  },
   authData: {}
 };
 

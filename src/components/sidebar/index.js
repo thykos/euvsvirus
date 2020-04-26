@@ -1,47 +1,65 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faUserFriends, faBookmark, faCalendarTimes, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { toHHMMSS } from '../../helpers/timer';
 import './style.css';
+// assets
+import { ReactComponent as BookmarkIcon } from '../../icons/bookmark.svg'
+import { ReactComponent as TeamIcon } from '../../icons/team.svg'
+import { ReactComponent as MessageIcon } from '../../icons/message.svg'
+import { ReactComponent as AlarmIcon } from '../../icons/alarm.svg'
+import SidebarCaseInfo from './SidebarCaseInfo';
+import { useSelector } from 'react-redux';
 
 const initialTimer = 18000;
 
+const Timer = () => {
+  const [timer, setTimer] = useState(initialTimer);
+  let timeInterval = null;
+  useEffect(() => {
+    timeInterval = setInterval(() => {
+      setTimer(prevValue => prevValue - 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(timeInterval);
+    }
+  }, [setTimer]);
+
+  return (
+    <div className="sidebar-timer">
+      <AlarmIcon className="alarm-icon"/>
+      <span className="sidebar-timer-time">{toHHMMSS(timer)}</span>
+    </div>
+  );
+}
+
+
 const Sidebar = () => {
-
-  const [ timer, onTimerChange ] = useState(initialTimer);
-
-  setInterval(() => onTimerChange(timer - 1), 1000);
+  const currentCase = useSelector(state => state.case)
+  const currentUser = useSelector(state => state.user.user)
 
   const links = [
-    { to: '/profile', icon: faUser, text: 'Profile' },
-    { to: '/team', icon: faUserFriends, text: 'Team' },
-    { to: '/sections', icon: faBookmark, text: 'Sections' },
-    { to: '/help', icon: faQuestionCircle, text: 'Help' },
+    { to: '/notes', icon: <BookmarkIcon />, text: 'Notes' },
+    { to: '/my-team', icon: <TeamIcon />, text: 'My Team' },
+    { to: '/help', icon: <MessageIcon />, text: 'Help' },
   ];
-
   return (
     <aside className="sidebar-wrapper">
       <div className="sidebar">
-        <div className="logo">Logo</div>
+        {currentCase && <SidebarCaseInfo currentCase={currentCase} user={currentUser} />}
+
+
         <ul className="menu">
           {links.map((link, idx) => (
             <li key={idx}>
               <NavLink to={link.to} activeClassName="active-menu-link">
-                <span className="menu-item-icon"><FontAwesomeIcon size="2x" icon={link.icon}/></span>
+                <span className="menu-item-icon">{link.icon}</span>
                 {link.text}
                 </NavLink>
             </li>
           ))}
         </ul>
-        <div className="sidebar-footer">
-          <div className="sidebar-timer">
-            <span className="menu-item-icon">
-              <FontAwesomeIcon size="2x" icon={faCalendarTimes}/>
-            </span>
-            <span className="sidebar-timer-time">{toHHMMSS(timer)}</span>
-            </div>
-        </div>
+        <Timer />
       </div>
     </aside>
   )

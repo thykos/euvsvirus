@@ -4,7 +4,7 @@ export default {
     name: 'COPENHAGEN BUSSINES SCHOOL',
     site: 'WWW.CBS.COM',
   },
-  title: 'British Petroleum:',
+  title: 'British Petroleum',
   subtitle: 'From Texas City to the Gulf of Mexico and Beyond',
   img: 'https://source.unsplash.com/random/800x600',
   sections: [

@@ -18,18 +18,19 @@
 }
 
 .preview-wrapper .title {
-    font-size: 30px;
     margin-top: 16px;
     margin-bottom: 6px;
     color: #000;
     font-weight: 500;
+    font-size: 70px;
 }
 
 .preview-wrapper .subtitle {
-    font-size: 20px;
     margin-bottom: 22px;
     font-weight: 200;
     color: #000;
+    font-size: 30px;
+    margin-bottom: 50px;
 }
 
 .preview-wrapper .img-wrapper img {

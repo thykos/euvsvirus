@@ -6,10 +6,6 @@ import './style.css';
 const Preview = ({ item }) => {
   return (
     <div className="preview-wrapper">
-      <div className="author">
-        <span>{item.author.name}</span>
-        <span>{item.author.site}</span>
-      </div>
       <div className="title">{item.title}</div>
       <div className="subtitle">{item.subtitle}</div>
       <div className="img-wrapper">
