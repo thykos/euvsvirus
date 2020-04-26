@@ -1,6 +1,42 @@
 .section-wrapper {
     padding: 20px 0;
+    position: relative;
     box-sizing: border-box;
+}
+
+.section-wrapper .section-caption {
+    position: absolute;
+    background: #FB7C6D;
+    padding: 10px 30px;
+    width: 60px;
+    color: #fff;
+    top: 0;
+    right: -120px;
+    text-align: center;
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+}
+
+.section-wrapper .section-caption:after {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    border-left: 40px solid #FB7C6D;
+    border-top: 40px solid transparent;
+    border-right: 40px solid transparent;
+    display: inline-block;
+    content: '';
+}
+
+.section-wrapper .section-caption:before {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border-left: 40px solid #FB7C6D;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    display: inline-block;
+    content: '';
 }
 
 .section-wrapper .btns-wrapper {

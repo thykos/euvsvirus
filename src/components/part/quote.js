@@ -10,11 +10,15 @@ const Quote = ({ part }) => {
         <div className="quote">
         <div className="icon"><FontAwesomeIcon size="3x" icon={faQuoteRight}/></div>
         <div className="data-wrapper">
-          <div>{part.data.content}</div>
-          <div className="author">
-            <img src={part.data.author.avatar} alt={part.data.author.name}/>
-            <strong>{part.data.author.name},</strong> <span>{part.data.author.info}</span>
-          </div>
+          {part.data.contents.map((item, idx) => (
+            <div className="data-content" key={idx}>
+              <div>{item.content}</div>
+              <div className="author">
+                <img src={item.author.avatar} alt={item.author.name}/>
+                <strong>{item.author.name},</strong> <span>{item.author.info}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

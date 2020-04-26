@@ -1,7 +1,8 @@
 import fakeCase from '../helpers/fakeCase';
 const lsProgress = window.localStorage.getItem('progress');
 const initialProgress = {
-  sectionId: null
+  sectionId: null,
+  checkedSections: []
 };
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
 
 const START_CASE = 'case/start';
 const SET_SECTION = 'case/set_section';
+const SET_CHECKED = 'case/set_checked';
 
 const caseData = (state = initialState, action) => {
   switch (action.type) {
@@ -38,6 +40,18 @@ const caseData = (state = initialState, action) => {
       }
     }
 
+    case SET_CHECKED: {
+      const newProgress = {
+        ...state.progress,
+        checkedSections: action.payload
+      };
+      window.localStorage.setItem('progress', JSON.stringify(newProgress));
+      return {
+      ...state,
+        progress: newProgress
+      }
+    }
+
     default:
       return state
   }
@@ -51,8 +65,15 @@ export function onCaseStart() {
 
 export function setSection(id) {
   return {
-    type: START_CASE,
+    type: SET_SECTION,
     payload: id
+  }
+}
+
+export function setChecked(array) {
+  return {
+    type: SET_CHECKED,
+    payload: array
   }
 }
 

@@ -1,5 +1,5 @@
 .part-wrapper {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .part-wrapper .hero-wrapper {
@@ -40,17 +40,17 @@
 
 .part-wrapper .text-wrapper {
     color: #000;
-    width: 70%;
+    width: 100%;
 }
 
 .part-wrapper .text-wrapper .title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
 .part-wrapper .text-wrapper .content {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: normal;
 }
 
@@ -64,7 +64,7 @@
     position: relative;
     padding: 0 150px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -78,14 +78,18 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 160%;
-    text-align: center;
+    text-align: left;
+}
+
+.part-wrapper .quote-wrapper .quote .data-wrapper .data-content{
+    margin-bottom: 30px;
 }
 
 .part-wrapper .quote-wrapper .quote .data-wrapper .author {
     display: flex;
     margin-top: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .part-wrapper .quote-wrapper .quote .data-wrapper .author img {
@@ -137,5 +141,84 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 160%;
+    color: #000;
+}
+
+.part-wrapper .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+}
+
+.part-wrapper .title-wrapper .title {
+    font-size: 70px;
+    line-height: 80px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #000;
+}
+
+.part-wrapper .title-wrapper .subtitle {
+    font-size: 30px;
+    line-height: 36px;
+    color: #000;
+    font-weight: normal;
+    margin: 0 0 40px 0;
+}
+
+.part-wrapper .title-wrapper img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+
+.part-wrapper .image-wrapper {
+    width: 100%;
+}
+.part-wrapper .image-wrapper img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 100%;
+}
+
+
+.part-wrapper .file-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.part-wrapper .file-wrapper .title {
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.part-wrapper .file-wrapper .file {
+    font-size: 18px;
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.part-wrapper .file-wrapper .file a{
+    font-size: 18px;
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.part-wrapper .file-wrapper .file .file-icon {
+    margin-right: 30px;
+    color: #FB7C6D;
+}
+
+.part-wrapper .file-wrapper .filename {
+    text-decoration: underline;
     color: #000;
 }

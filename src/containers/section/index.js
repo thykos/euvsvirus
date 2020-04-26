@@ -3,30 +3,39 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { findIndex } from 'lodash';
 import { useParams, Link, Redirect } from 'react-router-dom';
-import { setSection } from '../../store/case';
+import { setSection, setChecked } from '../../store/case';
 import Part from '../../components/part';
 import './style.css';
 
 const Section = (props) => {
   const { id } = useParams();
-  const { cse, onSet } = props;
+  const { cse, onSet, progress, onNext } = props;
   useEffect(() => {
     onSet(id);
-  }, []);
+  }, [id]);
 
   const section = cse.sections.find(item => item.id === parseInt(id));
   const sectionIds = cse.sections.map(item => item.id);
   const currentSectionIndex = findIndex(sectionIds, idx => idx === parseInt(id));
   const nextSectionId = sectionIds[currentSectionIndex + 1];
   const prevSectionId = sectionIds[currentSectionIndex - 1];
-  const nextLink = nextSectionId ? `/section/${nextSectionId}` : '/';
-  const prevLink = prevSectionId ? `/section/${prevSectionId}` : '/';
+  const nextLink = nextSectionId ? `/section/${nextSectionId}` : null;
+  const prevLink = prevSectionId ? `/section/${prevSectionId}` : null;
+
+  const onClickNext = () => {
+    const checkedProgress = progress.checkedSections;
+    const nextChecked = checkedProgress.includes(id) ? checkedProgress : [...checkedProgress, id];
+    onNext(nextChecked);
+  };
+
+  const link = (link, handler, text, type) => link ? <Link to={link} onClick={handler}><button className={`btn big ${type}`}>{text}</button></Link> : <button className={`btn big ${type}`} disabled>{text}</button>;
   return id ? (
     <div className="section-wrapper">
+      <div className="section-caption">{section.caption}</div>
       {section && section.parts.map((part, idx) => <Part part={part} key={idx}/>)}
       <div className="btns-wrapper">
-        <Link to={prevLink}><button className="btn big">Previous</button></Link>
-        <Link to={nextLink}><button className="btn big">Next</button></Link>
+        {link(prevLink, () => {}, 'Previous', 'outline')}
+        {link(nextLink, onClickNext, 'Next')}
       </div>
     </div>
   ) : (<Redirect to="/"/>);
@@ -40,7 +49,8 @@ const mapStateToProps = state => ({
 Section.propTypes = {
   cse: PropTypes.object.isRequired,
   progress: PropTypes.object.isRequired,
-  onSet: PropTypes.func.isRequired
+  onSet: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, { onSet: setSection })(Section);
+export default connect(mapStateToProps, { onSet: setSection, onNext: setChecked })(Section);

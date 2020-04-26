@@ -5,7 +5,7 @@ import './style.css';
 const Text = ({ part }) => {
   return (
     <div className="text-wrapper">
-      <div className="title">{part.data.title}</div>
+      {part.data.title ? <div className="title">{part.data.title}</div> : null}
       <div className="content">{part.data.content}</div>
     </div>
   )
